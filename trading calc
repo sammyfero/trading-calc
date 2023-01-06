@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <title>Calculator</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>SL</th>
+      <th>TP</th>
+      <th>RR</th>
+      <th>New RR</th>
+      <th>New TP</th>
+    </tr>
+    <tr>
+      <td><input type="text" id="sl"></td>
+      <td><input type="text" id="tp"></td>
+      <td id="rr">-</td>
+      <td id="new_rr">-</td>
+      <td id="new_tp">-</td>
+    </tr>
+  </table>
+  <button onclick="calculate()">Calculate</button>
+  <script>
+    function calculate() {
+      const sl = document.getElementById("sl").value;
+      const tp = document.getElementById("tp").value;
+      const rr = tp / sl;
+      document.getElementById("rr").innerHTML = rr.toFixed(2);
+      const new_rr = rr + 0.2;
+      document.getElementById("new_rr").innerHTML = new_rr.toFixed(2);
+      const new_tp = sl * new_rr;
+      document.getElementById("new_tp").innerHTML = new_tp.toFixed(2);
+    }
+  </script>
+</body>
+</html>
